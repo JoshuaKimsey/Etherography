@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Etherography</title>
+    <link rel="shortcut icon" href="Resources/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto|Roboto+Mono|Source+Sans+Pro:400,700"
+        rel="stylesheet">
+    <!-- Compiled and minified Materialize CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/css/materialize.min.css">
+    <style>
+        /* Lots of Defunct Code Here - Will Be Cleaned Up Eventually */
+        main {
+            background-color: #fff;
+            background-image: url("Resources/background-wave.png")
+        }
+
+        .brand-logo {
+            font-family: "Source Sans Pro", Source Sans Pro, Roboto
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #userName {
+            font-family: "Roboto" !important;
+            font-weight: bold;
+        }
+
+        nav>.container {
+            margin: 0% 10%
+        }
+
+        #myProgress {
+            width: 100%;
+            background-color: #fff;
+            height: 10px;
+        }
+
+        #myBar {
+            width: 0%;
+            height: 10px;
+            background-color: #5f00de;
+        }
+
+        .buttons {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+
+        .buttons.active,
+        .buttons:hover {
+            background-color: #171fc9;
+            color: #fff
+        }
+
+        .btn:focus {
+            background-color: #171fc9;
+            color: #fff
+        }
+
+        input:focus {
+            border-bottom: 1px solid #171fc9 !important;
+            box-shadow: 0 1px 0 0 #171fc9 !important;
+        }
+
+        input:focus+label {
+            color: #171fc9 !important;
+        }
+
+        #container {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            top: -40px;
+            right: -270px
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="blue darken-3">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="" class="brand-logo">Etherography</a>
+                    <img src="Resources/Etherography-Logo.svg"
+                        style="position:relative; width:20px; right: 30px; top: 11px">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="">
+        <div class="row">
+            <div class="col s12 center" id="canvas-div">
+                <div class="row">
+                    <div class="container center-align">
+                        <h4 id="userName"> Loading Ethereum Network...</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="mainsvg">
+                        <svg xmlns='http://www.w3.org/2000/svg' class="" width="1000" height="1000">
+                            <rect id="one" width="100" height="1000" x="0" />
+                            <rect id="two" width="100" height="1000" x="100" />
+                            <rect id="three" width="100" height="1000" x="200" />
+                            <rect id="four" width="100" height="1000" x="300" />
+                            <rect id="five" width="100" height="1000" x="400" />
+                            <rect id="six" width="100" height="1000" x="500" />
+                            <rect id="seven" width="100" height="1000" x="600" />
+                            <rect id="eight" width="100" height="1000" x="700" />
+                            <rect id="nine" width="100" height="1000" x="800" />
+                            <rect id="ten" width="100" height="1000" x="900" />
+                            <text id="char" x="2" y="950" fill="white"
+                                style="position: absolute; color: white; font-size: 165px; font-family: 'Roboto Mono'; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"></text>
+                        </svg>
+                    </div>
+                    <canvas id="canvas" class="hidden" width="1800" height="800"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row center">
+                <div class="input-field col s4">
+                    <input type="text" id="blockNum" name="block">
+                    <label for="Block Number" id="label">Enter Block Number</label>
+                </div>
+                <div class="col s8">
+                    <div class="">
+                        <div class="row valign-wrapper">
+                            <a href="#!" class="btn buttons" onclick="getUserBlockNumber()">Search For Block</a>
+                            <a href="#!" class="btn buttons" onclick="startProviderListener()">Latest Block</a>
+                        </div>
+                        <div class="row">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="credits" class="valign-wrapper">
+                    
+                </div>
+                <div class="col s4 valign-wrapper">
+                    <h5 id="userName">Created by Joshua Kimsey</h5>
+                </div>
+                <div class="col s1 valign-wrapper">
+                    <a class="github-button" href="https://github.com/JoshuaKimsey/Etherography"
+                        data-color-scheme="no-preference: dark_high_contrast; light: dark_high_contrast; dark: dark_high_contrast;"
+                        data-size="large" data-show-count="true" aria-label="Follow @JoshuaKimsey on GitHub">View On
+                        GitHub</a>
+                </div>
+                <div class="col s6"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Compiled and minified MaterializeCSS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/js/materialize.min.js"></script>
+    <!-- GitHub Button Code -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Ether API JS -->
+    <script src="https://cdn.ethers.io/lib/ethers-5.1.umd.min.js" type="text/javascript"></script>
+    <script src="main.js"></script>
+    <script>
+        startProviderListener()
+    </script>
+</body>
+
+</html>
