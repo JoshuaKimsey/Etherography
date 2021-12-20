@@ -1,4 +1,4 @@
 # Etherography
- A Stenography Visualiser for the Ethereum Network
+ A Steganography Visualiser for the Ethereum Network
 
  Readme TBD/WIP...
