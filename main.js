@@ -5,6 +5,10 @@ const NETWORK = "homestead";
 const provider = ethers.getDefaultProvider(NETWORK, {});
 let largest_block
 
+// Set Timer Defaults
+let secondsSinceLastBlock = 0
+setInterval(setTimer, 1000)
+
 // Show Latest Block Data
 function startProviderListener() {
     // Get Ether Block Hash Data
@@ -20,6 +24,7 @@ async function getBlockData(blockNumber) {
     //console.log(blockData.substr(3, blockData.length-4))
 
     createBarFlag(blockData.substr(3, blockData.length - 4), blockNumber)
+    secondsSinceLastBlock = 0
 }
 
 // Show Static Block Data From User Input
@@ -66,4 +71,10 @@ function createBarFlag(blockHash, blockNumber) {
 
     document.getElementById("label").innerHTML = "Enter Block Number (Max of " + largest_block + ")"
 
+}
+
+function setTimer() {
+    document.getElementById("sec").innerHTML = secondsSinceLastBlock
+
+    secondsSinceLastBlock++
 }

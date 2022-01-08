@@ -78,6 +78,16 @@
             top: -40px;
             right: -270px
         }
+
+        #sec {
+            padding-left: 10px;
+            font-size: 1.2em;
+        }
+
+        #sec::before {
+            content: "Seconds Since Last Block: ";
+        }
+
     </style>
 </head>
 
@@ -103,7 +113,7 @@
                         <h4 id="userName"> Loading Ethereum Network...</h4>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="barcode">
                     <div id="mainsvg">
                         <svg xmlns='http://www.w3.org/2000/svg' class="" width="1000" height="1000">
                             <rect id="one" width="100" height="1000" x="0" />
@@ -122,6 +132,45 @@
                     </div>
                     <canvas id="canvas" class="hidden" width="1800" height="800"></canvas>
                 </div>
+                <div class="row hidden" id="barcode">
+                    <div id="mainsvg">
+                        <svg xmlns='http://www.w3.org/2000/svg' class="" width="1000" height="1000">
+                            <rect id="one" width="100" height="1000" x="0" />
+                            <rect id="two" width="100" height="1000" x="100" />
+                            <rect id="three" width="100" height="1000" x="200" />
+                            <rect id="four" width="100" height="1000" x="300" />
+                            <rect id="five" width="100" height="1000" x="400" />
+                            <rect id="six" width="100" height="1000" x="500" />
+                            <rect id="seven" width="100" height="1000" x="600" />
+                            <rect id="eight" width="100" height="1000" x="700" />
+                            <rect id="nine" width="100" height="1000" x="800" />
+                            <rect id="ten" width="100" height="1000" x="900" />
+                            <text id="char" x="2" y="950" fill="white"
+                                style="position: absolute; color: white; font-size: 165px; font-family: 'Roboto Mono'; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"></text>
+                        </svg>
+                    </div>
+                    <canvas id="canvas" class="hidden" width="1800" height="800"></canvas>
+                </div>
+                <div class="row hidden" id="barcode">
+                    <div id="mainsvg">
+                        <svg xmlns='http://www.w3.org/2000/svg' class="" width="1000" height="1000">
+                            <rect id="one" width="100" height="1000" x="0" />
+                            <rect id="two" width="100" height="1000" x="100" />
+                            <rect id="three" width="100" height="1000" x="200" />
+                            <rect id="four" width="100" height="1000" x="300" />
+                            <rect id="five" width="100" height="1000" x="400" />
+                            <rect id="six" width="100" height="1000" x="500" />
+                            <rect id="seven" width="100" height="1000" x="600" />
+                            <rect id="eight" width="100" height="1000" x="700" />
+                            <rect id="nine" width="100" height="1000" x="800" />
+                            <rect id="ten" width="100" height="1000" x="900" />
+                            <text id="char" x="2" y="950" fill="white"
+                                style="position: absolute; color: white; font-size: 165px; font-family: 'Roboto Mono'; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"></text>
+                        </svg>
+                    </div>
+                    <canvas id="canvas" class="hidden" width="1800" height="800"></canvas>
+                </div>
+
             </div>
         </div>
         <div class="container">
@@ -135,6 +184,9 @@
                         <div class="row valign-wrapper">
                             <a href="#!" class="btn buttons" onclick="getUserBlockNumber()">Search For Block</a>
                             <a href="#!" class="btn buttons" onclick="startProviderListener()">Latest Block</a>
+                            <div class="">
+                                <div id="sec">00</div>
+                            </div>
                         </div>
                         <div class="row">
 
@@ -144,7 +196,7 @@
             </div>
             <div class="row">
                 <div id="credits" class="valign-wrapper">
-                    
+
                 </div>
                 <div class="col s4 valign-wrapper">
                     <h5 id="userName">Created by Joshua Kimsey</h5>
@@ -161,7 +213,8 @@
     </main>
 
     <!-- Compiled and minified MaterializeCSS JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/js/materialize.min.js">
+    </script>
     <!-- GitHub Button Code -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Ether API JS -->
