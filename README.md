@@ -43,6 +43,7 @@ The API itself provides an easy way to listen for new blocks as they are mined o
 
 - [X] Create Working Version That Generates New Etherographs For Each New Block
 - [X] Add Ability For Users To Search For Past Blocks To See Their Etherographs
+- [X] Add Elapsed Time Since Last Block For Live Block View
 - [ ] Include Information About Etherographs To The Main Website Itself
 - [ ] Add Ability To Download Etherographs As PNG Files From The Current SVG Format
 - [ ] Create More Ways Of Generating Images From Ethereum Block Hash Data
