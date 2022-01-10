@@ -87,7 +87,6 @@
         #sec::before {
             content: "Seconds Since Last Block: ";
         }
-
     </style>
 </head>
 
@@ -110,67 +109,25 @@
             <div class="col s12 center" id="canvas-div">
                 <div class="row">
                     <div class="container center-align">
-                        <h4 id="userName"> Loading Ethereum Network...</h4>
+                        <h4 id="userName">Loading Ethereum Network...</h4>
                     </div>
                 </div>
-                <div class="row" id="barcode">
-                    <div id="mainsvg">
-                        <svg xmlns='http://www.w3.org/2000/svg' class="" width="1000" height="1000">
-                            <rect id="one" width="100" height="1000" x="0" />
-                            <rect id="two" width="100" height="1000" x="100" />
-                            <rect id="three" width="100" height="1000" x="200" />
-                            <rect id="four" width="100" height="1000" x="300" />
-                            <rect id="five" width="100" height="1000" x="400" />
-                            <rect id="six" width="100" height="1000" x="500" />
-                            <rect id="seven" width="100" height="1000" x="600" />
-                            <rect id="eight" width="100" height="1000" x="700" />
-                            <rect id="nine" width="100" height="1000" x="800" />
-                            <rect id="ten" width="100" height="1000" x="900" />
-                            <text id="char" x="2" y="950" fill="white"
-                                style="position: absolute; color: white; font-size: 165px; font-family: 'Roboto Mono'; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"></text>
-                        </svg>
-                    </div>
-                    <canvas id="canvas" class="hidden" width="1800" height="800"></canvas>
+                <div class="row" id="">
+                    <svg xmlns='http://www.w3.org/2000/svg' id="barcode" class="" width="1000" height="1000">
+                        <rect id="one" width="100" height="1000" x="0" />
+                        <rect id="two" width="100" height="1000" x="100" />
+                        <rect id="three" width="100" height="1000" x="200" />
+                        <rect id="four" width="100" height="1000" x="300" />
+                        <rect id="five" width="100" height="1000" x="400" />
+                        <rect id="six" width="100" height="1000" x="500" />
+                        <rect id="seven" width="100" height="1000" x="600" />
+                        <rect id="eight" width="100" height="1000" x="700" />
+                        <rect id="nine" width="100" height="1000" x="800" />
+                        <rect id="ten" width="100" height="1000" x="900" />
+                        <text id="char" x="2" y="950" fill="white"
+                              style="position: absolute; color: #fff; font-size: 165px; font-family: 'Roboto Mono'; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"></text>
+                    </svg>
                 </div>
-                <div class="row hidden" id="barcode">
-                    <div id="mainsvg">
-                        <svg xmlns='http://www.w3.org/2000/svg' class="" width="1000" height="1000">
-                            <rect id="one" width="100" height="1000" x="0" />
-                            <rect id="two" width="100" height="1000" x="100" />
-                            <rect id="three" width="100" height="1000" x="200" />
-                            <rect id="four" width="100" height="1000" x="300" />
-                            <rect id="five" width="100" height="1000" x="400" />
-                            <rect id="six" width="100" height="1000" x="500" />
-                            <rect id="seven" width="100" height="1000" x="600" />
-                            <rect id="eight" width="100" height="1000" x="700" />
-                            <rect id="nine" width="100" height="1000" x="800" />
-                            <rect id="ten" width="100" height="1000" x="900" />
-                            <text id="char" x="2" y="950" fill="white"
-                                style="position: absolute; color: white; font-size: 165px; font-family: 'Roboto Mono'; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"></text>
-                        </svg>
-                    </div>
-                    <canvas id="canvas" class="hidden" width="1800" height="800"></canvas>
-                </div>
-                <div class="row hidden" id="barcode">
-                    <div id="mainsvg">
-                        <svg xmlns='http://www.w3.org/2000/svg' class="" width="1000" height="1000">
-                            <rect id="one" width="100" height="1000" x="0" />
-                            <rect id="two" width="100" height="1000" x="100" />
-                            <rect id="three" width="100" height="1000" x="200" />
-                            <rect id="four" width="100" height="1000" x="300" />
-                            <rect id="five" width="100" height="1000" x="400" />
-                            <rect id="six" width="100" height="1000" x="500" />
-                            <rect id="seven" width="100" height="1000" x="600" />
-                            <rect id="eight" width="100" height="1000" x="700" />
-                            <rect id="nine" width="100" height="1000" x="800" />
-                            <rect id="ten" width="100" height="1000" x="900" />
-                            <text id="char" x="2" y="950" fill="white"
-                                style="position: absolute; color: white; font-size: 165px; font-family: 'Roboto Mono'; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"></text>
-                        </svg>
-                    </div>
-                    <canvas id="canvas" class="hidden" width="1800" height="800"></canvas>
-                </div>
-
             </div>
         </div>
         <div class="container">
@@ -199,7 +156,9 @@
 
                 </div>
                 <div class="col s4 valign-wrapper">
-                    <h5 id="userName">Created by Joshua Kimsey</h5>
+                    <h5 id="userName">Created by <a target="_blank" rel="noopener noreferrer"
+                            style="color: #000; text-decoration: underline;" href="https://jkimsey.tech">Joshua
+                            Kimsey</a></h5>
                 </div>
                 <div class="col s1 valign-wrapper">
                     <a class="github-button" href="https://github.com/JoshuaKimsey/Etherography"
