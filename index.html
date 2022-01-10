@@ -87,6 +87,14 @@
         #sec::before {
             content: "Seconds Since Last Block: ";
         }
+
+        #barcode-char {
+            position: absolute;
+            color: white;
+            font-size: 165px;
+            font-family: 'Roboto Mono';
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
     </style>
 </head>
 
@@ -125,7 +133,7 @@
                         <rect id="nine" width="100" height="1000" x="800" />
                         <rect id="ten" width="100" height="1000" x="900" />
                         <text id="char" x="2" y="950" fill="white"
-                              style="position: absolute; color: #fff; font-size: 165px; font-family: 'Roboto Mono'; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"></text>
+                            style="position: absolute; color: #fff; font-size: 165px; font-family: 'Roboto Mono'; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"></text>
                     </svg>
                 </div>
             </div>
@@ -140,7 +148,7 @@
                     <div class="">
                         <div class="row valign-wrapper">
                             <a href="#!" class="btn buttons" onclick="getUserBlockNumber()">Search For Block</a>
-                            <a href="#!" class="btn buttons" onclick="startProviderListener()">Latest Block</a>
+                            <a href="#!" class="btn buttons" onclick="showLiveData()">Latest Block</a>
                             <div class="">
                                 <div id="sec">00</div>
                             </div>
